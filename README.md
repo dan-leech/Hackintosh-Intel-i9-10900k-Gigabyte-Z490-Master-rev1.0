@@ -16,6 +16,7 @@ You can find my EFI folder in this repository.
   - Two USB-C ports
 - RAM: 64GB G.Skill Trident Z 3600Mhz CL18
 - GPU: MSI Radeon RX 5700 XT Gaming X
+- Display: Dell S2127QS connected with HDMI
 
 # Working
 - [x] **Tested with macOS Catalina 10.15.7**
@@ -27,6 +28,10 @@ You can find my EFI folder in this repository.
 - [x] **Sleep/Wake**
 - [x] **Shutdown**
 - [x] **Restart**
+
+## need post install setup with installing apps
+- [x] **Britness controll from keybord**
+- [x] **Volume control from keyboard**
 
 # Not tested yet
 - [ ] SideCar, Amazon Prime Video and Netflix in Safari
