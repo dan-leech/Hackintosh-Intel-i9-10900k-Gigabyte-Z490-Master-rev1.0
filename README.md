@@ -36,7 +36,7 @@ You can find my EFI folder in this repository.
 I followed this guide: https://www.tonymacx86.com/threads/gigabyte-z490-vision-d-thunderbolt-3-i5-10400-amd-rx-580.298642/
 It's completed and has all answers about install and post install. What I've improved it's usb mapping.
 
-*. EFI/OC folder contains different configs. You need to rename one to `config.plist`
+* EFI/OC folder contains different configs. You need to rename one to `config.plist`
 
 1. For install I've used `config-iGPU-install.plist` because I had not found the solution with bios name replacement for my card.
 2. `config-debug.plist` has bios name replacement for MSI 5770XT cards and it should work with install to.
