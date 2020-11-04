@@ -4,12 +4,12 @@ I have successfully installed MacOS Catalina 10.15.7 on my i9-10900k running on 
 
 You can find my EFI folder in this repository.
 
-**Current Bootloader: OpenCore 0.6.3 (30th Oct 2020)**
-**You can replace with 0.6.2 tested as well**
+**Current Bootloader: OpenCore 0.6.3**
 
 # Hardware
 - Intel i9-10900k
 - Gigabyte Z490 Aorus Master rev1.0:
+    - Bios: F6
 	- Audio: Realtek ALC1220-VB
 	- 2.5Gbit Ethernet: Intel I225-V
   - Wifi/BT: build-in Intel Wi-Fi 6 AX201
@@ -21,7 +21,7 @@ You can find my EFI folder in this repository.
 # Working
 - [x] **Tested with macOS Catalina 10.15.7**
 - [x] **Wifi and Bluetooth** motherboard's Intel Wi-Fi 6 AX201 (AirportItlwm.v1.0b-catalina.kext, IntelBluetoothFirmware.kext, IntelBluetoothInjector.kext, [@see](https://github.com/OpenIntelWireless/itlwm))
-- [x] **Audio**: Realtek ALC1220-VB (AppleALC.kext, layout-id=7, device-id=0xA170, FakeID.kext, FakePCIID_Intel_HDMI_Audio.kext)
+- [x] **Audio**: Realtek ALC1220-VB (AppleALC.kext, layout-id=7, device-id=0xA170, FakeID.kext, FakePCIID_Intel_HDMI_Audio.kext) Layout 7 shows connectors in Hackintool when 11 is working too and considered as better option...
 - [x] **USB**, all ports.
 - [x] **2.5Gbit Ethernet (Intel I225-V)**
 - [x] **With iMac20,2: AppleTV** 
@@ -30,18 +30,24 @@ You can find my EFI folder in this repository.
 - [x] **Restart**
 
 ## need post install setup with installing apps
-- [x] **Britness controll from keybord**
-- [x] **Volume control from keyboard**
+- [x] **Britness controll from keybord** with MonitorControl
+- [x] **Volume control from keyboard** with SoundSource
 
 # Not tested yet
-- [ ] SideCar, Amazon Prime Video and Netflix in Safari
+- [ ] SideCar, Amazon Prime Video and Netflix in Safari. Others say that they work in other browsers and T2 chip is necessary for Safari working.
+
+# Problems that I have
+- I don't know how make audio hot plug. I need auto-switch default audio source to headphones when I plug headphones and back to my display when unplug. If anybody knows it, please, advice.
+- There should be a way to rid of all FakePCIID.kext, please advise
 
 # Details
 
 I followed this guide: https://www.tonymacx86.com/threads/gigabyte-z490-vision-d-thunderbolt-3-i5-10400-amd-rx-580.298642/
 It's completed and has all answers about install and post install. What I've improved it's usb mapping.
+You can follow all Bios setup steps and others there.
 
 * EFI/OC folder contains different configs. You need to rename one to `config.plist`
+* Please, [generate](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) your own serials for PlatformInfo section. 
 
 1. For install I've used `config-iGPU-install.plist` because I had not found the solution with bios name replacement for my card.
 2. `config-debug.plist` has bios name replacement for MSI 5770XT cards and it should work with install to.
