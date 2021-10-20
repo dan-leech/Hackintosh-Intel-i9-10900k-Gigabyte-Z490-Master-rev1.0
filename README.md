@@ -1,10 +1,12 @@
 # Hackintosh Intel i9 10900k Gigabyte Z490 Aorus Master rev1.0
 
-I have successfully installed MacOS Catalina 10.15.7 on my i9-10900k running on a Gigabyte Z490 Aorus Master rev1.0.
+This branch for MacOS BigSur 11.6. I updated from MacOS Catalina 10.15.7.
+
+MacOS Catalina 10.15.7 version and installation you can find [here](https://github.com/dan-leech/Hackintosh-Intel-i9-10900k-Gigabyte-Z490-Master-rev1.0/tree/catalina-0.6.3): 
 
 You can find my EFI folder in this repository.
 
-**Current Bootloader: OpenCore 0.6.3**
+**Current Bootloader: OpenCore 0.7.4**
 
 # Hardware
 - Intel i9-10900k
@@ -19,7 +21,7 @@ You can find my EFI folder in this repository.
 - Display: Dell S2127QS connected with HDMI
 
 # Working
-- [x] **Tested with macOS Catalina 10.15.7**
+- [x] **Tested with macOS Catalina 10.15.7 and MacOS BigSur 11.6** Catalina WiFi doesn't work.
 - [x] **Wifi and Bluetooth** motherboard's Intel Wi-Fi 6 AX201 (AirportItlwm.v1.0b-catalina.kext, IntelBluetoothFirmware.kext, IntelBluetoothInjector.kext, [@see](https://github.com/OpenIntelWireless/itlwm))
 - [x] **Audio**: Realtek ALC1220-VB (AppleALC.kext, layout-id=7, device-id=0xA170, FakeID.kext, FakePCIID_Intel_HDMI_Audio.kext) Layout 7 shows connectors in Hackintool when 11 is working too and considered as better option...
 - [x] **USB**, all ports.
@@ -31,7 +33,7 @@ You can find my EFI folder in this repository.
 
 ## need post install setup with installing apps
 - [x] **Britness controll from keybord** with MonitorControl
-- [x] **Volume control from keyboard** with SoundSource
+- [x] **Volume control from keyboard**
 
 # Not tested yet
 - [ ] SideCar, Amazon Prime Video and Netflix in Safari. Others say that they work in other browsers and T2 chip is necessary for Safari working.
@@ -49,10 +51,18 @@ You can follow all Bios setup steps and others there.
 * EFI/OC folder contains different configs. You need to rename one to `config.plist`
 * Please, [generate](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html#generate-a-new-serial) your own serials for PlatformInfo section. 
 
+Following is from the previous version. I have not tried fresh BigSur installation.
 1. For install I've used `config-iGPU-install.plist` because I had not found the solution with bios name replacement for my card.
 2. `config-debug.plist` has bios name replacement for MSI 5770XT cards and it should work with install to.
 3. Create the install usb yourself, for some reasons downloaded usb images that I tried didn't work.
 4. When you'll be sure that macos load well you can use `config-prod.plist`
+
+For MacOs Catalina capability please follow [tis](https://www.tonymacx86.com/threads/gigabyte-z490-vision-d-thunderbolt-3-i5-10400-amd-rx-580.298642/page-769#post-2277944) 
+```
+Misc -> Security -> SecureBootMode -> disabled (for Catalina, works for BigSur too) / default (for BigSur)
+```
+
+`config-Intel-GPU.plist` follows to black screen BigSur. I have no time to check, please PR if you have a solution. 
 
 ## Language
 
